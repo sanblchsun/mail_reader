@@ -1,10 +1,15 @@
-mail_pass = "пароль от ящика для внешних приложений"
-username = "адрес@mail.ru"
-imap_server = "imap.mail.ru"
+from environs import Env
 
-bot_key = "токен от бота"
-chat_id = "айди чата куда добавлен бот"
+env = Env()
+env.read_env()
 
-send_attach = True #пересылка вложений, чтобы отключить нужен параметр False
+mail_pass = env.str("MAIL_PASS")
+email = env.str("EMAIL")
+imap_server = env.str("IMAP_SERVER")
 
-encoding="utf-8"
+bot_token = env.str("BOT_TOKEN")
+chat_id = env.int("CHAT")
+
+# send_attach = False #пересылка вложений, чтобы отключить нужен параметр False
+#
+# encoding="utf-8"
