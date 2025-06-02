@@ -12,8 +12,8 @@ def _check_filters(firma_filter_def, firma_def):
             for i_pattern in firma_filter_def:
                 if i_pattern.lower() in firma_def.lower():
                     return True
-                else:
-                    return False
+                
+        return False
 
     logging.info("Критичная ошибка, в файле filter.ini возможно строка firma_filter = пустая")
     exit(1)
